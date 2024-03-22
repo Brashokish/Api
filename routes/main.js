@@ -10,7 +10,7 @@ __path = process.cwd()
 //   Siapa Mahu Upload Jangan Lupa Credit :),
 //   Siapa Tidak Letak Credit Akan Ambil Tindakan
 //   
-//_______________________ ┏ Make By AlipBot ┓ _______________________\\
+//_______________________ ┏ Make By Brashokish ┓ _______________________\\
 
 var express = require('express');
 var router = express.Router();
