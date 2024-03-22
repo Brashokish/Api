@@ -1,7 +1,7 @@
 {
-  "name": "api-mask-ser",
+  "name": "api-brasho-kish",
   "version": "2.0.0",
-  "description": "make by mask ser free rest api",
+  "description": "make by brasho kish free rest api",
   "main": "index.js",
   "engines": {
     "node": "16.x"
@@ -14,19 +14,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mask-sir/api.mask.ser.git"
+    "url": "git+https://github.com/Brashokish/api.brasho.kish.git"
   },
   "keywords": [
     "restapi",
     "bot",
     "whatsaap"
   ],
-  "author": "MASK SER",
+  "author": "BRASHO KISH",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mask-sir/api.mask.ser/issues"
+    "url": "https://github.com/Brashokish/api.Brashokish/issues"
   },
-  "homepage": "https://github.com/mask-sir/api.mask.ser#readme",
+  "homepage": "https://github.com/Brashokish/api.Brashokish#readme",
   "dependencies": {
     "axios": "^0.27.2",
     "bitly": "^7.1.2",
