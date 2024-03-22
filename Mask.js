@@ -1,6 +1,6 @@
 //_______________________ ┏  Info  ┓ _______________________\\
 //
-//   Credit : AlipBot
+//   Credit : Kishbot
 //   
 //   Note 
 //   Do not sell this SC,
@@ -8,4 +8,4 @@
 // Who Wants To Upload Don't Forget Credit :),
 // Those Who Don't Put Credit Will Take Action
 //   
-//_______________________ ┏ MADE BY MASK SER ┓ _______________________\\
+//_______________________ ┏ MADE BY BRASHO KISH ┓ _______________________\\
