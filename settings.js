@@ -1,6 +1,6 @@
 //_______________________ ┏  Info  ┓ _______________________\\
 //
-//   Credit : AlipBot
+//   Credit : Brashokish 
 //   
 //   Note 
 //   Don't sell this SC ,
@@ -8,7 +8,7 @@
 //   Who Wants To Upload Don't Forget Credit :),
 //   Who Does Not Put Credit Will Take Action
 //   
-//_______________________ ┏ Make By AlipBot ┓ _______________________\\
+//_______________________ ┏ Make By Brashokish ┓ _______________________\\
 
 
 
@@ -17,7 +17,7 @@
 //_______________________ ┏  Setting  ┓ _______________________\\
 
 // Name Creator
-creator = '乂𝞛𝞓𝙎𝞙 𝙎𝞝𝗥乂'
+creator = 'KISH𓅃'
 
 //_______________________ ┏  Apikey  ┓ _______________________\\
 
@@ -39,7 +39,7 @@ loghandler = {
     error: {
         status: false,
         code: 503,
-        message: '[!] Service Unavaible, please contact creator mask ser',
+        message: '[!] Service Unavaible, please contact creator brasho kish',
         maintanied_by: `${creator}`
     },
     noturl: {
