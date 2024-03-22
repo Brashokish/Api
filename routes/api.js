@@ -49,7 +49,7 @@ var router = express.Router()
 
 router.get('/dowloader/fbdown', async (req, res, next) => {
 	var url = req.query.url
-	if (!url ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter url"})  
+	if (!url ) return res.json({ status : false, creator : `${creator}`, message : "[!] input parameter url"})  
 
 alip.fbDown2(url)
 .then(data => {
@@ -67,7 +67,7 @@ alip.fbDown2(url)
 
 router.get('/dowloader/twitter', async (req, res, next) => {
 	var url = req.query.url
-	if (!url ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter url"})   
+	if (!url ) return res.json({ status : false, creator : `${creator}`, message : "[!] input parameter url"})   
 	
 alip.twitter(url)
 .then(data => {
@@ -86,7 +86,7 @@ res.json(loghandler.error)
 
 router.get('/dowloader/tikok', async (req, res, next) => {
 	var url = req.query.url
-	if (!url ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter url"})  
+	if (!url ) return res.json({ status : false, creator : `${creator}`, message : "[!] input parameter url"})  
 
 alip.musically(url)
 .then(data => {
@@ -106,7 +106,7 @@ alip.musically(url)
 
 router.get('/dowloader/igstory', async (req, res, next) => {
 	var username = req.query.username
-	if (!username ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter username"})   
+	if (!username ) return res.json({ status : false, creator : `${creator}`, message : "[!] input parameter username"})   
 	alip.igstory(username)
 	.then(data => {
 		if (!data ) return res.json(loghandler.notfound)
@@ -124,7 +124,7 @@ router.get('/dowloader/igstory', async (req, res, next) => {
 
 router.get('/dowloader/igreels', async (req, res, next) => {
 	var url = req.query.url
-	if (!url ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter url"})   
+	if (!url ) return res.json({ status : false, creator : `${creator}`, message : "[!] input parameter url"})   
 
 	alip.igdl(url)
 	.then(data => {
@@ -144,7 +144,7 @@ router.get('/dowloader/igreels', async (req, res, next) => {
 
 router.get('/dowloader/igdowloader', async (req, res, next) => {
 	var url = req.query.url
-	if (!url ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter url"})   
+	if (!url ) return res.json({ status : false, creator : `${creator}`, message : "[!] input parameter url"})   
 	
 	alip.igdl(url)
 	.then(data => {
@@ -165,7 +165,7 @@ router.get('/dowloader/igdowloader', async (req, res, next) => {
 
 router.get('/dowloader/yt', async (req, res, next) => {
 	var url = req.query.url
-	if (!url ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter url"}) 
+	if (!url ) return res.json({ status : false, creator : `${creator}`, message : "[!] input parameter url"}) 
 
 	let { yta, ytv } = require('../lib/y2mate')
 	let mp3 = await yta(url, '320kbps')
@@ -187,7 +187,7 @@ router.get('/dowloader/yt', async (req, res, next) => {
 
 router.get('/dowloader/soundcloud', async (req, res, next) => {
 	var url = req.query.url
-	if (!url ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter url"})   
+	if (!url ) return res.json({ status : false, creator : `${creator}`, message : "[!] input parameter url"})   
 	
 	alip.soundcloud(url)
 	.then(data => {
@@ -207,7 +207,7 @@ router.get('/dowloader/soundcloud', async (req, res, next) => {
 
 router.get('/dowloader/telesticker', async (req, res, next) => {
 	var url = req.query.url
-	if (!url ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter url"})   
+	if (!url ) return res.json({ status : false, creator : `${creator}`, message : "[!] input parameter url"})   
 	if (!url.match(/(https:\/\/t.me\/addstickers\/)/gi)) return res.json(loghandler.noturl)
 	alip.telesticker(url)
 	.then(data => {
@@ -227,7 +227,7 @@ router.get('/dowloader/telesticker', async (req, res, next) => {
 
 router.get('/textpro/pencil', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] input parameter text"})   
 	alip.textpro("https://textpro.me/create-a-sketch-text-effect-online-1044.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -241,7 +241,7 @@ router.get('/textpro/pencil', async (req, res, next) => {
 
 router.get('/textpro/glitch', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] input parameter text"})   
 	alip.textpro("https://textpro.me/create-impressive-glitch-text-effects-online-1027.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -255,7 +255,7 @@ router.get('/textpro/glitch', async (req, res, next) => {
 
 router.get('/textpro/blackpink', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] input parameter text"})   
 	alip.textpro("https://textpro.me/create-blackpink-logo-style-online-1001.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -269,7 +269,7 @@ router.get('/textpro/blackpink', async (req, res, next) => {
 
 router.get('/textpro/berry', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] input parameter text"})   
 	alip.textpro("https://textpro.me/create-berry-text-effect-online-free-1033.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -283,7 +283,7 @@ router.get('/textpro/berry', async (req, res, next) => {
 
 router.get('/textpro/neon', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] input parameter text"})   
 	alip.textpro("https://textpro.me/neon-light-text-effect-online-882.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -298,7 +298,7 @@ router.get('/textpro/neon', async (req, res, next) => {
 
 router.get('/textpro/logobear', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] input parameter text"})   
 	alip.textpro("https://textpro.me/online-black-and-white-bear-mascot-logo-creation-1012.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -312,7 +312,7 @@ router.get('/textpro/logobear', async (req, res, next) => {
 
 router.get('/textpro/3dchristmas', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] input parameter text"})   
 	alip.textpro("https://textpro.me/3d-christmas-text-effect-by-name-1055.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -326,7 +326,7 @@ router.get('/textpro/3dchristmas', async (req, res, next) => {
 
 router.get('/textpro/thunder', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] input parameter text"})   
 	alip.textpro("https://textpro.me/online-thunder-text-effect-generator-1031.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -340,7 +340,7 @@ router.get('/textpro/thunder', async (req, res, next) => {
 
 router.get('/textpro/3dboxtext', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] input parameter text"})   
 	alip.textpro("https://textpro.me/3d-box-text-effect-online-880.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -355,8 +355,8 @@ router.get('/textpro/3dboxtext', async (req, res, next) => {
 router.get('/textpro/glitch2', async (req, res, next) => {
 	var text1 = req.query.text
 	var text2 = req.query.text2
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
-	if (!text2 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text2"}) 
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] input parameter text"})   
+	if (!text2 ) return res.json({ status : false, creator : `${creator}`, message : "[!] input parameter text2"}) 
 	alip.textpro("https://textpro.me/create-a-glitch-text-effect-online-free-1026.html", [text1,text2])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -370,8 +370,8 @@ router.get('/textpro/glitch2', async (req, res, next) => {
 router.get('/textpro/glitchtiktok', async (req, res, next) => {
 	var text1 = req.query.text
 	var text2 = req.query.text2
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
-	if (!text2 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text2"}) 
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] input parameter text"})   
+	if (!text2 ) return res.json({ status : false, creator : `${creator}`, message : "[!] input parameter text2"}) 
 	alip.textpro("https://textpro.me/create-glitch-text-effect-style-tik-tok-983.html", [text1,text2])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -385,8 +385,8 @@ router.get('/textpro/glitchtiktok', async (req, res, next) => {
 router.get('/textpro/video-game-classic', async (req, res, next) => {
 	var text1 = req.query.text
 	var text2 = req.query.text2
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
-	if (!text2 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text2"}) 
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] input parameter text"})   
+	if (!text2 ) return res.json({ status : false, creator : `${creator}`, message : "[!] input parameter text2"}) 
 	alip.textpro("https://textpro.me/video-game-classic-8-bit-text-effect-1037.html", [text1,text2])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -400,8 +400,8 @@ router.get('/textpro/video-game-classic', async (req, res, next) => {
 router.get('/textpro/marvel-studios', async (req, res, next) => {
 	var text1 = req.query.text
 	var text2 = req.query.text2
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
-	if (!text2 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text2"}) 
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] input parameter text"})   
+	if (!text2 ) return res.json({ status : false, creator : `${creator}`, message : "[!] input parameter text2"}) 
 	alip.textpro("https://textpro.me/create-logo-style-marvel-studios-online-971.html", [text1,text2])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
