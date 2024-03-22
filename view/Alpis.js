@@ -1,11 +1,9 @@
 //_______________________ ┏  Info  ┓ _______________________\\
 //
-//   Credit : AlipBot
+//   Do not sell this SC,
+// Do not remove this text,
+// Who Wants To Upload Don't Forget Credit :),
+// Those Who Don't Put Credit Will Take Action
+//
 //   
-//   Note 
-//   Jangan Jual SC ini ,
-//   Jangan Buang Text ini,
-//   Siapa Mahu Upload Jangan Lupa Credit :),
-//   Siapa Tidak Letak Credit Akan Ambil Tindakan
-//   
-//_______________________ ┏ Make By AlipBot ┓ _______________________\\
+//_______________________ ┏ Make By Brashokish ┓ _______________________\\
