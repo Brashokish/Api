@@ -8,7 +8,7 @@
 // Who Wants To Upload Don't Forget Credit :),
 // Those Who Don't Put Credit Will Take Action
 //   
-//_______________________ ┏ MADED BY MASK SER ┓ _______________________\\
+//_______________________ ┏ MADED BY BRASHO KISH ┓ _______________________\\
 
 const express = require('express'); 
 const app = express();
@@ -57,7 +57,7 @@ app.listen(PORT, () => {
 	██╔══██╗██╔══╝  ╚════██║   ██║   ██╔══██║██╔═══╝ ██║
 	██║  ██║███████╗███████║   ██║   ██║  ██║██║     ██║
 	╚═╝  ╚═╝╚══════╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝     ╚═╝
-			                              Maded by mask ser 
+			                              Maded by Brasho kish 
 								 
  Server running on http://localhost:` + PORT)
 console.log(`Hello ${creator}`)
