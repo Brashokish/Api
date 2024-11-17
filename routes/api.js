@@ -70,7 +70,7 @@ alip.fbDown2(url)
 })
 })
 
-router.get('/api/gpt', async (req, res) => {
+router.get('/searchq/gpt', async (req, res, next) => {
     try {
         const query = req.query.text;  // Get the text parameter from the request
         if (!query) {
