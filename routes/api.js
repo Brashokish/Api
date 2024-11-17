@@ -851,23 +851,40 @@ router.get('/search/wallpaper', async (req, res, next) => {
 })
 })
 
-router.get('/search/google', async (req, res, next) => {
-	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+router.get('/search/google', async (req, res) => {
+    try {
+        const text1 = req.query.text;
+        if (!text1) {
+            return res.status(400).json({
+                status: false,
+                creator: "KISH𓅃",
+                message: "[!] Please provide a search query in the 'text' parameter."
+            });
+        }
 
-	googleIt({'query': text1}).then(results => {
-		if (!results[0] ) return res.json(loghandler.notfound)
-			res.json({
-				status: true,
-				creator: `${creator}`,
-				result: results
-			})
+        const results = await googleIt({ query: text1 });
+        if (!results || results.length === 0) {
+            return res.status(404).json({
+                status: false,
+                creator: "KISH𓅃",
+                message: "[!] No results found for your query."
+            });
+        }
 
-	}).catch(e => {	
-		res.json(loghandler.notfound)
-	})
-
-})
+        res.json({
+            status: true,
+            creator: "KISH𓅃",
+            result: results
+        });
+    } catch (e) {
+        console.error("Error:", e);
+        res.status(500).json({
+            status: false,
+            creator: "KISH𓅃",
+            message: "An internal error occurred. Please try again later."
+        });
+    }
+});
 
 router.get('/search/googleimage', async (req, res, next) => {
 	var text1 = req.query.text
