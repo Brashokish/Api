@@ -70,9 +70,12 @@ alip.fbDown2(url)
 })
 })
 
-router.get('/searchq/gpt', async (req, res, next) => {
+router.get('/api/gpt', async (req, res) => {
+    const creator = 'Brashokish';  // Define creator value
+
     try {
-        const query = req.query.text;  // Get the text parameter from the request
+        const query = req.query.text;  // Get the 'text' query parameter from the request
+
         if (!query) {
             return res.status(400).json({
                 status: false,
@@ -81,21 +84,19 @@ router.get('/searchq/gpt', async (req, res, next) => {
             });
         }
 
-        // Make a request to OpenAI's GPT API
-        const gptResponse = await openai.createCompletion({
-            model: "text-davinci-003",  // You can use other models like "gpt-3.5-turbo" or "gpt-4"
-            prompt: query,
-            max_tokens: 150,  // Adjust based on desired length of response
-            temperature: 0.7  // Control randomness (higher = more creative)
+        // OpenAI GPT-3.5 or GPT-4 API Request
+        const gptResponse = await openai.chat.completions.create({
+            model: "gpt-3.5-turbo",
+            messages: [{ role: "user", content: query }],
+            max_tokens: 150,
+            temperature: 0.7
         });
 
-        // Respond with GPT output
         res.json({
             status: true,
             creator: creator,
-            result: gptResponse.data.choices[0].text.trim()  // Get the response text
+            result: gptResponse.data.choices[0].message.content.trim()
         });
-
     } catch (error) {
         console.error("Error:", error);
         res.status(500).json({
