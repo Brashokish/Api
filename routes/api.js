@@ -8,6 +8,10 @@ const googleIt = require('google-it')
 const { shortText } = require("limit-text-js")
 const Canvas = require('canvas')
 const TinyURL = require('tinyurl');
+const { Configuration, OpenAIApi } = require('openai');
+const openai = new OpenAIApi(configuration)
+const configuration = new Configuration({
+    apiKey: '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',
 const { EmojiAPI } = require("emoji-api");
 const emoji = new EmojiAPI();
 var isUrl = require("is-url")
@@ -42,7 +46,7 @@ var router = express.Router()
 // >Emoji
 // >Tools
 // >Islamic
-//
+// >gpt
 //
 //―――――――――――――――――――――――――――――――――――――――――― ┏  Dowloader  ┓ ―――――――――――――――――――――――――――――――――――――――――― \\
 
@@ -64,6 +68,42 @@ alip.fbDown2(url)
 		res.json(loghandler.error)
 })
 })
+
+router.get('/api/gpt', async (req, res) => {
+    try {
+        const query = req.query.text;  // Get the text parameter from the request
+        if (!query) {
+            return res.status(400).json({
+                status: false,
+                creator: creator,
+                message: "[!] Please provide a query in the 'text' parameter."
+            });
+        }
+
+        // Make a request to OpenAI's GPT API
+        const gptResponse = await openai.createCompletion({
+            model: "text-davinci-003",  // You can use other models like "gpt-3.5-turbo" or "gpt-4"
+            prompt: query,
+            max_tokens: 150,  // Adjust based on desired length of response
+            temperature: 0.7  // Control randomness (higher = more creative)
+        });
+
+        // Respond with GPT output
+        res.json({
+            status: true,
+            creator: creator,
+            result: gptResponse.data.choices[0].text.trim()  // Get the response text
+        });
+
+    } catch (error) {
+        console.error("Error:", error);
+        res.status(500).json({
+            status: false,
+            creator: creator,
+            message: "An error occurred while processing your request."
+        });
+    }
+});
 
 router.get('/dowloader/twitter', async (req, res, next) => {
 	var url = req.query.url
