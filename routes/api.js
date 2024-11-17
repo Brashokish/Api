@@ -10,7 +10,7 @@ const Canvas = require('canvas')
 const TinyURL = require('tinyurl');
 const { Configuration, OpenAIApi } = require('openai');
 const openai = new OpenAIApi(configuration)
-const configuration = new Configuration({
+const configuration = new Configuration(
     apiKey: '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',
 const { EmojiAPI } = require("emoji-api");
 const emoji = new EmojiAPI();
