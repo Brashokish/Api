@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Free Rest Api Dowloader search random picture maker and others">
+    <meta name="description" content="Free Rest Api Downloader search random picture maker and others">
     <meta name="author" content="Brasho kish">
     <meta property="og:image" content="https://i.imgur.com/dehik0h.png">
     <title>Brasho kish Apis │ Docs</title>
@@ -15,74 +15,255 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="css/default.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        .api-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .api-table th, .api-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .api-table th {
+            background-color: #f2f2f2;
+        }
+        .active {
+            color: green;
+        }
+        .inactive {
+            color: red;
+        }
+        .btn {
+            margin: 5px;
+        }
+    </style>
 </head>
 
 <body id="page-top" class="dark-mode">
     <div id="wrapper">
-        <!-- Sidebar content here -->
+        <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/docs">
+                <img src="images/IMG-20220810-WA0058.png" class="rounded-circle shadow-4" style="width: 50px;" alt="Avatar" />
+                <div class="sidebar-brand-text mx-3">Rest API</div>
+            </a>
+            <hr class="sidebar-divider my-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="/statistic">
+                    <i class="fas fa-fw fa-thermometer-three-quarters"></i>
+                    <span>Statistic</span></a>
+            </li>
+            <hr class="sidebar-divider">
 
-        <div class="container-fluid">
-            <h3 class="mt-4">API Status</h3>
-            <table class="table table-bordered">
-                <thead>
+            <!-- Downloader APIs Section -->
+            <h6 class="collapse-header" data-toggle="collapse" data-target="#downloaderAPIs" aria-expanded="false" aria-controls="downloaderAPIs">
+                <i class="fas fa-fw fa-download"></i> Downloader APIs <i class="fas fa-chevron-down"></i>
+            </h6>
+            <div class="collapse" id="downloaderAPIs">
+                <table class="api-table">
                     <tr>
                         <th>API</th>
                         <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Facebook Downloader</td>
-                        <td id="facebook-status">Checking...</td>
+                        <th>Action</th>
                     </tr>
                     <tr>
-                        <td>Twitter Downloader</td>
-                        <td id="twitter-status">Checking...</td>
+                        <td>Example API 1</td>
+                        <td class="active">Active</td>
+                        <td><a class="btn btn-primary" href="#" target="_blank">Download</a></td>
                     </tr>
                     <tr>
-                        <td>TikTok Downloader</td>
-                        <td id="tiktok-status">Checking...</td>
+                        <td>Example API 2</td>
+                        <td class="inactive">Inactive</td>
+                        <td><a class="btn btn-secondary" href="#" target="_blank">Download</a></td>
                     </tr>
-                    <tr>
-                        <td>Instagram Downloader</td>
-                        <td id="instagram-status">Checking...</td>
-                    </tr>
-                    <tr>
-                        <td>SoundCloud Downloader</td>
-                        <td id="soundcloud-status">Checking...</td>
-                    </tr>
-                    <tr>
-                        <td>Text Pro Service</td>
-                        <td id="textpro-status">Checking...</td>
-                    </tr>
-                    <tr>
-                        <td>Photooxy Service</td>
-                        <td id="photooxy-status">Checking...</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+                </table>
+            </div>
 
-        <script>
-            // Example: You can use JavaScript to dynamically check API statuses
-            function checkApiStatus(apiName) {
-                // Example API check - Replace with actual API checks
-                fetch(`https://api.example.com/status/${apiName}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        const status = data.active ? "Active" : "Inactive";
-                        document.getElementById(`${apiName}-status`).innerText = status;
-                    })
-                    .catch(error => {
-                        document.getElementById(`${apiName}-status`).innerText = "Error";
-                    });
-            }
+            <!-- Text Pro Section -->
+            <h6 class="collapse-header" data-toggle="collapse" data-target="#textProAPIs" aria-expanded="false" aria-controls="textProAPIs">
+                <i class="fas fa-fw fa-pencil-alt"></i> Text Pro APIs <i class="fas fa-chevron-down"></i>
+            </h6>
+            <div class="collapse" id="textProAPIs">
+                <table class="api-table">
+                    <tr>
+                        <th>API</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td>Text API 1</td>
+                        <td class="active">Active</td>
+                        <td><a class="btn btn-primary" href="#" target="_blank">Generate</a></td>
+                    </tr>
+                    <tr>
+                        <td>Text API 2</td>
+                        <td class="inactive">Inactive</td>
+                        <td><a class="btn btn-secondary" href="#" target="_blank">Generate</a></td>
+                    </tr>
+                </table>
+            </div>
 
-            // Check all APIs
-            const apiList = ['facebook', 'twitter', 'tiktok', 'instagram', 'soundcloud', 'textpro', 'photooxy'];
-            apiList.forEach(api => checkApiStatus(api));
-        </script>
+            <!-- Sound Of Text Section -->
+            <h6 class="collapse-header" data-toggle="collapse" data-target="#soundOfTextAPIs" aria-expanded="false" aria-controls="soundOfTextAPIs">
+                <i class="fas fa-fw fa-volume-up"></i> Sound Of Text APIs <i class="fas fa-chevron-down"></i>
+            </h6>
+            <div class="collapse" id="soundOfTextAPIs">
+                <table class="api-table">
+                    <tr>
+                        <th>Language</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td>Indonesian</td>
+                        <td class="active">Active</td>
+                        <td><a class="btn btn-primary" href="api/soundoftext?text=hi&lang=id-ID" target="_blank">Generate</a></td>
+                    </tr>
+                    <tr>
+                        <td>English (United States)</td>
+                        <td class="active">Active</td>
+                        <td><a class="btn btn-primary" href="api/soundoftext?text=hi&lang=en-US" target="_blank">Generate</a></td>
+                    </tr>
+                    <tr>
+                        <td>Japanese (Japan)</td>
+                        <td class="active">Active</td>
+                        <td><a class="btn btn-primary" href="api/soundoftext?text=hi&lang=ja-JP" target="_blank">Generate</a></td>
+                    </tr>
+                    <tr>
+                        <td>French</td>
+                        <td class="active">Active</td>
+                        <td><a class="btn btn-primary" href="api/soundoftext?text=hi&lang=fr-FR" target="_blank">Generate</a></td>
+                    </tr>
+                    <tr>
+                        <td>Filipino</td>
+                        <td class="active">Active</td>
+                        <td><a class="btn btn-primary" href="api/soundoftext?text=hi&lang=fil-PH" target="_blank">Generate</a></td>
+                    </tr>
+                    <tr>
+                        <td>Burmese (Myanmar)</td>
+                        <td class="active">Active</td>
+                        <td><a class="btn btn-primary" href="api/soundoftext?text=hi&lang=my" target="_blank">Generate</a></td>
+                    </tr>
+                    <tr>
+                        <td>German</td>
+                        <td class="active">Active</td>
+                        <td><a class="btn btn-primary" href="api/soundoftext?text=hi&lang=de-DE" target="_blank">Generate</a></td>
+                    </tr>
+                    <tr>
+                        <td>Italian</td>
+                        <td class="active">Active</td>
+                        <td><a class="btn btn-primary" href="api/soundoftext?text=hi&lang=it-IT" target="_blank">Generate</a></td>
+                    </tr>
+                    <tr>
+                        <td>Korean</td>
+                        <td class="active">Active</td>
+                        <td><a class="btn btn-primary" href="api/soundoftext?text=hi&lang=ko-KR" target="_blank">Generate</a></td>
+                    </tr>
+                </table>
+            </div>
 
+            <!-- Search Section -->
+            <h6 class="collapse-header" data-toggle="collapse" data-target="#searchAPIs" aria-expanded="false" aria-controls="searchAPIs">
+                <i class="fas fa-fw fa-search"></i> Search APIs <i class="fas fa-chevron-down"></i>
+            </h6>
+            <div class="collapse" id="searchAPIs">
+                <table class="api-table">
+                    <tr>
+                        <th>API</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td>Search API 1</td>
+                        <td class="active">Active</td>
+                        <td><a class="btn btn-primary" href="#" target="_blank">Search</a></td>
+                    </tr>
+                    <tr>
+                        <td>Search API 2</td>
+                        <td class="inactive">Inactive</td>
+                        <td><a class="btn btn-secondary" href="#" target="_blank">Search</a></td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Random Picture Section -->
+            <h6 class="collapse-header" data-toggle="collapse" data-target="#randomPictureAPIs" aria-expanded="false" aria-controls="randomPictureAPIs">
+                <i class="fas fa-fw fa-image"></i> Random Picture APIs <i class="fas fa-chevron-down"></i>
+            </h6>
+            <div class="collapse" id="randomPictureAPIs">
+                <table class="api-table">
+                    <tr>
+                        <th>API</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td>Random Picture API 1</td>
+                        <td class="active">Active</td>
+                        <td><a class="btn btn-primary" href="#" target="_blank">Get Picture</a></td>
+                    </tr>
+                    <tr>
+                        <td>Random Picture API 2</td>
+                        <td class="inactive">Inactive</td>
+                        <td><a class="btn btn-secondary" href="#" target="_blank">Get Picture</a></td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Game Section -->
+            <h6 class="collapse-header" data-toggle="collapse" data-target="#gameAPIs" aria-expanded="false" aria-controls="gameAPIs">
+                <i class="fas fa-fw fa-gamepad"></i> Game APIs <i class="fas fa-chevron-down"></i>
+            </h6>
+            <div class="collapse" id="gameAPIs">
+                <table class="api-table">
+                    <tr>
+                        <th>API</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td>Game API 1</td>
+                        <td class="active">Active</td>
+                        <td><a class="btn btn-primary" href="#" target="_blank">Play</a></td>
+                    </tr>
+                    <tr>
+                        <td>Game API 2</td>
+                        <td class="inactive">Inactive</td>
+                        <td><a class="btn btn-secondary" href="#" target="_blank">Play</a></td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Maker Section -->
+            <h6 class="collapse-header" data-toggle="collapse" data-target="#makerAPIs" aria-expanded="false" aria-controls="makerAPIs">
+                <i class="fas fa-fw fa-cogs"></i> Maker APIs <i class="fas fa-chevron-down"></i>
+            </h6>
+            <div class="collapse" id="makerAPIs">
+                <table class="api-table">
+                    <tr>
+                        <th>API</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td>Maker API 1</td>
+                        <td class="active">Active</td>
+                        <td><a class="btn btn-primary" href="#" target="_blank">Create</a></td>
+                    </tr>
+                    <tr>
+                        <td>Maker API 2</td>
+                        <td class="inactive">Inactive</td>
+                        <td><a class="btn btn-secondary" href="#" target="_blank">Create</a></td>
+                    </tr>
+                </table>
+            </div>
+
+        </ul>
     </div>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
