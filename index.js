@@ -50,7 +50,7 @@ app.use(function (err, req, res, next) {
 
 
 app.listen(PORT, () => {
-    console.log(
+    console.log(`
 	██████╗ ███████╗███████╗████████╗ █████╗ ██████╗ ██╗
 	██╔══██╗██╔════╝██╔════╝╚══██╔══╝██╔══██╗██╔══██╗██║
 	██████╔╝█████╗  ███████╗   ██║   ███████║██████╔╝██║
@@ -59,8 +59,8 @@ app.listen(PORT, () => {
 	╚═╝  ╚═╝╚══════╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝     ╚═╝
 			                              Maded by Brasho kish 
 								 
- Server running on http://localhost: + PORT)
-console.log(Hello ${creator})
+ Server running on http://localhost:` + PORT)
+console.log(`Hello ${creator}`)
 })
 
 module.exports = app
