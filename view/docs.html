@@ -1,46 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Free Rest Api Downloader search random picture maker and others">
+    <meta name="description" content="Free Rest API Downloader search random picture maker and others">
     <meta name="author" content="Brasho kish">
     <meta property="og:image" content="https://i.imgur.com/dehik0h.png">
     <title>Brasho kish Apis │ Docs</title>
     <script src="https://kit.fontawesome.com/5367cb78eb.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="https://i.imgur.com/dehik0h.png"/> 
+    <link rel="shortcut icon" href="https://i.imgur.com/dehik0h.png"/>
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="css/default.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <style>
-        .api-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
+        .status-indicator {
+            margin-left: 10px;
+            font-weight: bold;
         }
-        .api-table th, .api-table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        .api-table th {
-            background-color: #f2f2f2;
-        }
-        .active {
+        .status-online {
             color: green;
         }
-        .inactive {
+        .status-offline {
             color: red;
-        }
-        .btn {
-            margin: 5px;
         }
     </style>
 </head>
-
 <body id="page-top" class="dark-mode">
     <div id="wrapper">
         <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
@@ -52,82 +38,46 @@
             <li class="nav-item active">
                 <a class="nav-link" href="/statistic">
                     <i class="fas fa-fw fa-thermometer-three-quarters"></i>
-                    <span>Statistic</span></a>
+                    <span>Statistic</span>
+                </a>
             </li>
             <hr class="sidebar-divider">
-
-            <!-- Downloader APIs Section -->
-            <h6 class="collapse-header">Downloader APIs</h6>
-            <div>
-                <table class="api-table">
-                    <tr>
-                        <th>API</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                    </tr>
-                    <tr>
-                        <td>Image Downloader API</td>
-                        <td class="active">Active</td>
-                        <td><a class="btn btn-primary" href="#" target="_blank">Download</a></td>
-                    </tr>
-                    <tr>
-                        <td>Video Downloader API</td>
-                        <td class="active">Active</td>
-                        <td><a class="btn btn-primary" href="#" target="_blank">Download</a></td>
-                    </tr>
-                    <tr>
-                        <td>Document Downloader API</td>
-                        <td class="inactive">Inactive</td>
-                        <td><a class="btn btn-secondary" href="#" target="_blank">Download</a></td>
-                    </tr>
-                    <tr>
-                        <td>Audio Downloader API</td>
-                        <td class="active">Active</td>
-                        <td><a class="btn btn-primary" href="#" target="_blank">Download</a></td>
-                    </tr>
-                    <tr>
-                        <td>PDF Downloader API</td>
-                        <td class="inactive">Inactive</td>
-                        <td><a class="btn btn-secondary" href="#" target="_blank">Download</a></td>
-                    </tr>
-                    <tr>
-                        <td>Thumbnail Downloader API</td>
-                        <td class="active">Active</td>
-                        <td><a class="btn btn-primary" href="#" target="_blank">Download</a></td>
-                    </tr>
-                    <tr>
-                        <td>Profile Picture Downloader API</td>
-                        <td class="active">Active</td>
-                        <td><a class="btn btn-primary" href="#" target="_blank">Download</a></td>
-                    </tr>
-                    <tr>
-                        <td>Wallpaper Downloader API</td>
-                        <td class="active">Active</td>
-                        <td><a class="btn btn-primary" href="#" target="_blank">Download</a></td>
-                    </tr>
-                    <tr>
-                        <td>GIF Downloader API</td>
-                        <td class="inactive">Inactive</td>
-                        <td><a class="btn btn-secondary" href="#" target="_blank">Download</a></td>
-                    </tr>
-                    <tr>
-                        <td>Random Image API</td>
-                        <td class="active">Active</td>
-                        <td><a class="btn btn-primary" href="#" target="_blank">Download</a></td>
-                    </tr>
-                    <tr>
-                        <td>Random Quote API</td>
-                        <td class="active">Active</td>
-                        <td><a class="btn btn-primary" href="#" target="_blank">Download</a></td>
-                    </tr>
-                    <tr>
-                        <td>Random Joke API</td>
-                        <td class="active">Active</td>
-                        <td><a class="btn btn-primary" href="#" target="_blank">Download</a></td>
-                    </tr>
-                </table>
-            </div>
-
+            <div class="sidebar-heading">Features</div>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseDownload" aria-expanded="true" aria-controls="collapseDownload">
+                    <i class="fa fa-fw fa-download"></i>
+                    <span>Download</span>
+                </a>
+                <div id="collapseDownload" class="collapse" aria-labelledby="headingDownload" data-parent="#accordionSidebar">
+                    <div class="py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Download Features</h6>
+                        <a class="collapse-item" href="api/dowloader/fbdown?url=https://www.facebook.com/UstazAzharIdrusFansClub/videos/813224618838631" target="_blank">FB Down<span class="status-indicator" id="fb-status">...</span></a>
+                        <a class="collapse-item" href="api/dowloader/twitter?url=https://twitter.com/faqeeyaaz/status/1242789155173617664?s=20&t=DRgdl9U8MwTwpY0o1o-96g" target="_blank">Twitter<span class="status-indicator" id="twitter-status">...</span></a>
+                        <a class="collapse-item" href="api/dowloader/tikok?url=https://vt.tiktok.com/ZSdqSfBxG/?k=1" target="_blank">TikTok<span class="status-indicator" id="tiktok-status">...</span></a>
+                        <a class="collapse-item" href="api/dowloader/igstory?username=aniq_shaaheen" target="_blank">IG Story<span class="status-indicator" id="igstory-status">...</span></a>
+                        <a class="collapse-item" href="api/dowloader/igreels?url=https://www.instagram.com/reel/CPKMOwvlfSB/?igshid=YmMyMTA2M2Y=" target="_blank">IG Reels<span class="status-indicator" id="igreels-status">...</span></a>
+                        <a class="collapse-item" href="api/dowloader/igdowloader?url=https://www.instagram.com/tv/CeBAd9wAA6G/?igshid=MDJmNzVkMjY=" target="_blank">IG Download<span class="status-indicator" id="igdowloader-status">...</span></a>
+                        <a class="collapse-item" href="api/dowloader/yt?url=https://youtu.be/3hXbjp-FcTc" target="_blank">YouTube<span class="status-indicator" id="yt-status">...</span></a>
+                        <a class="collapse-item" href="api/dowloader/soundcloud?url=https://soundcloud.com/ndaa-212683099/dj-coba-kau-ingat-ingat-kembali-seharusnya-aku-jungle-dutch-terbaru-2021-full-bass-viral-tik?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank">SoundCloud<span class="status-indicator" id="soundcloud-status">...</span></a>
+                        <a class="collapse-item" href="api/dowloader/telesticker?url=https://t.me/addstickers/Shitsshitsshitsshists" target="_blank">Telegram Sticker<span class="status-indicator" id="telesticker-status">...</span></a>
+                    </div>
+                </div>
+            </li>
+            <hr class="sidebar-divider">
+            <div class="sidebar-heading">Contact</div>
+            <li class="nav-item">
+                <a class="nav-link" href="https://github.com/Brashokish">
+                    <i class="fab fa-fw fa-github"></i>
+                    <span>Github</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://instagram.com/Brashokish">
+                    <i class="fab fa-fw fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+            </li>
+            <hr class="sidebar-divider">
         </ul>
 
         <div id="content-wrapper" class="d-flex flex-column">
@@ -177,46 +127,133 @@
                                 </div>
                             </div>
                         </div>
-
+                        
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card h-50">
                                 <div class="card-body">
-                                    <div class="row align-items-center">
+                                    <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-uppercase mb-1">API Requests</div>
-                                            <div class="h5 mb-0 font-weight-bold" id="api-requests">0</div>
+                                            <div class="text-xs font-weight-bold text-uppercase mb-1">Battery</div>
+                                            <span id="battery_level" class="h5 mb-0 font-weight-bold">Waiting...</span>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-server fa-2x text-primary"></i>
+                                            <i class="fa fa-battery-full"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card h-50">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-uppercase mb-1">ROAD TO SUCCESS KISH</div>
+                                            <div class="h5 mb-0 font-weight-bold" id="Endtime">Waiting...</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-primary"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card h-50">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-uppercase mb-1">Time</div>
+                                            <div class="h5 mb-0 font-weight-bold" id="time-display">00:00:00</div>
+                                            <div class="h5 mb-0 font-weight-bold" id="greeting">Good morning</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-primary"></i>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                    
+                    <div id="findipurl"><a href="find-ip.net"></a></div>
+                    <script defer src="https://api.find-ip.net/widget.js?width=220&bg=%23152232&border=%230e1824&textcol=%23d3d5f3&language=0&system=0&"></script>
 
-            <footer class="sticky-footer">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        Made with <i class="fa fa-heart"></i> by
-                        <a href="https://github.com/Brashokish" target="_blank" style="color: rgb(255, 234, 0);">BRASHO KISH🇰🇪</a>
+                    <div class="Box mt-4">
+                        <div class="Box-body p-4">
+                            <div class="d-flex flex-justify-between">
+                                <div class="text-mono text-small mb-3"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 text-center">
+                                    Contact Me
+                                    <p>
+                                        <a href="https://github.com/Brashokish" class="btn btn-primary btn-sm mr-2" target="_blank"><i class="fab fa-fw fa-github"></i>&nbsp;Github</a>
+                                        <a href="https://instagram.com/brashokish" class="btn btn-primary btn-sm ml-2" target="_blank"><i class="fab fa-fw fa-instagram"></i>&nbsp;Instagram</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </footer>
+
+                <footer class="sticky-footer">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            Made with <i class="fa fa-heart"></i> by
+                            <a href="https://github.com/Brashokish" target="_blank" style="color: rgb(255, 234, 0);">BRASHO KISH🇰🇪</a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
         </div>
-    </div>
 
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
 
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="js/ruang-admin.min.js"></script>
-    <script src="js/menu.js"></script>
-</body>
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+        <script src="js/ruang-admin.min.js"></script>
+        <script src="js/menu.js"></script>
 
+        <script>
+            const apiLinks = [
+                { url: "api/dowloader/fbdown?url=https://www.facebook.com/UstazAzharIdrusFansClub/videos/813224618838631", statusId: "fb-status" },
+                { url: "api/dowloader/twitter?url=https://twitter.com/faqeeyaaz/status/1242789155173617664?s=20&t=DRgdl9U8MwTwpY0o1o-96g", statusId: "twitter-status" },
+                { url: "api/dowloader/tikok?url=https://vt.tiktok.com/ZSdqSfBxG/?k=1", statusId: "tiktok-status" },
+                { url: "api/dowloader/igstory?username=aniq_shaaheen", statusId: "igstory-status" },
+                { url: "api/dowloader/igreels?url=https://www.instagram.com/reel/CPKMOwvlfSB/?igshid=YmMyMTA2M2Y=", statusId: "igreels-status" },
+                { url: "api/dowloader/igdowloader?url=https://www.instagram.com/tv/CeBAd9wAA6G/?igshid=MDJmNzVkMjY=", statusId: "igdowloader-status" },
+                { url: "api/dowloader/yt?url=https://youtu.be/3hXbjp-FcTc", statusId: "yt-status" },
+                { url: "api/dowloader/soundcloud?url=https://soundcloud.com/ndaa-212683099/dj-coba-kau-ingat-ingat-kembali-seharusnya-aku-jungle-dutch-terbaru-2021-full-bass-viral-tik?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing", statusId: "soundcloud-status" },
+                { url: "api/dowloader/telesticker?url=https://t.me/addstickers/Shitsshitsshitsshists", statusId: "telesticker-status" },
+            ];
+
+            async function checkApiStatus() {
+                for (const link of apiLinks) {
+                    try {
+                        const response = await fetch(link.url);
+                        const statusElement = document.getElementById(link.statusId);
+                        if (response.ok) {
+                            statusElement.textContent = "Online";
+                            statusElement.className = "status-indicator status-online";
+                        } else {
+                            statusElement.textContent = "Offline";
+                            statusElement.className = "status-indicator status-offline";
+                        }
+                    } catch (error) {
+                        const statusElement = document.getElementById(link.statusId);
+                        statusElement.textContent = "Offline";
+                        statusElement.className = "status-indicator status-offline";
+                    }
+                }
+            }
+
+            document.addEventListener("DOMContentLoaded", checkApiStatus);
+        </script>
+    </body>
 </html>
