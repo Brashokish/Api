@@ -8,11 +8,7 @@ const googleIt = require('google-it')
 const { shortText } = require("limit-text-js")
 const Canvas = require('canvas')
 const TinyURL = require('tinyurl');
-const { Configuration, OpenAIApi } = require('openai');
-const configuration = new Configuration({
-  apiKey: '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'  // Use your actual API key here
-});
-const openai = new OpenAIApi(configuration);
+const { GoogleGenerativeAI } = require("@google/generative-ai");
 const { EmojiAPI } = require("emoji-api");
 const emoji = new EmojiAPI();
 var isUrl = require("is-url")
@@ -70,41 +66,52 @@ alip.fbDown2(url)
 })
 })
 
-router.get('/api/gpt', async (req, res) => {
-    const creator = 'Brashokish';  // Define creator value
+// Configure Gemini AI (add this with your other configurations)
+const genAI = new GoogleGenerativeAI("AIzaSyAuw9QCvV-MSYKGl1FLpDetJyKF7_5vj6s");
+const model = genAI.getGenerativeModel({
+  model: "gemini-1.5-flash",
+  generationConfig: {
+    temperature: 0.3,
+    topP: 0.95,
+    topK: 64,
+    maxOutputTokens: 8192,
+  }
+});
 
-    try {
-        const query = req.query.text;  // Get the 'text' query parameter from the request
+// Add this route with your other routes
+router.get('/ai/gemini', async (req, res, next) => {
+  const text = req.query.text;
+  if (!text) return res.json({ 
+    status: false, 
+    creator: `${creator}`, 
+    message: "[!] Please provide a query in the 'text' parameter"
+  });
 
-        if (!query) {
-            return res.status(400).json({
-                status: false,
-                creator: creator,
-                message: "[!] Please provide a query in the 'text' parameter."
-            });
-        }
+  try {
+    const chat = model.startChat({
+      history: [{
+        role: "user",
+        parts: [{ text: "I am Kish-MD Ai, built by Kish (Kish AI). Model: V2.0 (Feb 2025). Purpose: Help, educate, and engage with kindness." }]
+      }]
+    });
 
-        // OpenAI GPT-3.5 or GPT-4 API Request
-        const gptResponse = await openai.chat.completions.create({
-            model: "gpt-3.5-turbo",
-            messages: [{ role: "user", content: query }],
-            max_tokens: 150,
-            temperature: 0.7
-        });
+    const result = await chat.sendMessage(text);
+    const response = await result.response;
+    const reply = response.text();
 
-        res.json({
-            status: true,
-            creator: creator,
-            result: gptResponse.data.choices[0].message.content.trim()
-        });
-    } catch (error) {
-        console.error("Error:", error);
-        res.status(500).json({
-            status: false,
-            creator: creator,
-            message: "An error occurred while processing your request."
-        });
-    }
+    res.json({
+      status: true,
+      creator: `${creator}`,
+      result: reply
+    });
+  } catch (error) {
+    console.error("AI Error:", error);
+    res.json({
+      status: false,
+      creator: `${creator}`,
+      message: "An error occurred while processing your AI request"
+    });
+  }
 });
 
 router.get('/dowloader/twitter', async (req, res, next) => {
